@@ -18,22 +18,68 @@
 <header>
   <h1>Ипатов Владислав</h1>
   <p>Геймер и разработчик игр</p>
+
+  <!-- Flexbox горизонтальное меню -->
+  <nav class="nav">
+    <ul class="nav-list">
+      <li><a href="#genres">Жанры</a></li>
+      <li><a href="#dashboard">Статистика</a></li>
+      <li><a href="#projects">Проекты</a></li>
+      <li><a href="#contact">Контакты</a></li>
+    </ul>
+  </nav>
 </header>
 
 <main>
   <img src="images/avatar.jpg" alt="Портрет Владислава Ипатова за компьютером" width="368" height="543">
 
-  <section>
-    <h2>Навыки</h2>
-    <ol>
-      <li>Алгоритмы и структуры данных</li>
-      <li>Работа с различными игровыми движками</li>
-      <li>Знание основ гейм-дизайна</li>
-      <li>Опыт работы с C#</li>
-    </ol>
+  <!-- Flexbox: карточки жанров в ряд -->
+  <section id="genres">
+    <h2>Любимые жанры игр</h2>
+    <div class="genre-cards">
+      <article class="genre-card">
+        <span class="genre-icon" aria-hidden="true">⚔️</span>
+        <h3>RPG</h3>
+        <p>Прокачка персонажа, ветвящиеся диалоги и выбор, влияющий на сюжет.</p>
+      </article>
+      <article class="genre-card">
+        <span class="genre-icon" aria-hidden="true">🎯</span>
+        <h3>Шутеры</h3>
+        <p>Быстрая реакция, тактическое позиционирование и управление отрядом.</p>
+      </article>
+      <article class="genre-card">
+        <span class="genre-icon" aria-hidden="true">🗺️</span>
+        <h3>Roguelike</h3>
+        <p>Процедурная генерация уровней и перманентная смерть персонажа.</p>
+      </article>
+      <article class="genre-card">
+        <span class="genre-icon" aria-hidden="true">🏰</span>
+        <h3>RTS</h3>
+        <p>Управление экономикой, строительство базы и тактика в реальном времени.</p>
+      </article>
+    </div>
   </section>
 
-  <section>
+  <!-- Grid дашборд -->
+  <section id="dashboard" class="dashboard">
+    <h2>Статистика игрового времени</h2>
+    <div class="dashboard-grid">
+      <div class="dashboard-item">
+        <h3>Часы в RPG</h3>
+        <p class="stat-value">342</p>
+      </div>
+      <div class="dashboard-item">
+        <h3>Победы в шутерах</h3>
+        <p class="stat-value">128</p>
+      </div>
+      <div class="dashboard-item">
+        <h3>Пройденные квесты</h3>
+        <p class="stat-value">87</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
     <h2>Проекты</h2>
     <div class="project-cards">
       <div class="project-card">
@@ -54,7 +100,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="contact">
     <h2>Обратная связь</h2>
     <form action="#" method="post">
       <div class="form-row">
@@ -77,7 +123,7 @@
     <h2>Обо мне</h2>
     <p>Любимая платформа: ПК</p>
     <p>Любимые технологии: Unity, C#</p>
-    <p>Профиль на <a href="https://github.com/MyatnieBoshki" target="_blank" rel="noopener">GitHub</a></p>
+    <p>Профиль на <a href="https://github.com" target="_blank" rel="noopener">GitHub</a></p>
   </aside>
 
 </main>

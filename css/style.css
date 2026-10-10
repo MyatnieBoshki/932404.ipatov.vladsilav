@@ -6,6 +6,54 @@
   --font-main: Arial, sans-serif;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  margin: 0;
+}
+
+h1, h2 {
+  color: var(--color-accent);
+}
+
+header {
+  padding: 10px;
+}
+
+/*  Flexbox навигация  */
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+.nav-list a {
+  color: var(--color-text);
+  text-decoration: none;
+  padding: 6px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.nav-list a:hover {
+  background-color: var(--color-border);
+  color: var(--color-primary);
+}
+
 /* position: static — поведение по умолчанию, задано явно для секций и aside */
 section, aside {
   position: static;
@@ -20,14 +68,64 @@ main {
   gap: 10px;
 }
 
-body {
-  background-color: var(--color-primary);
-  color: var(--color-text);
-  font-family: var(--font-main);
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-h1, h2 {
+/* Flexbox карточки жанров */
+.genre-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.genre-card {
+  flex: 1 1 220px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 12px;
+  background-color: rgba(217, 70, 239, 0.08);
+  text-align: center;
+}
+
+.genre-icon {
+  font-size: 2em;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.genre-card h3 {
   color: var(--color-accent);
+  margin: 4px 0;
+}
+
+/* Grid дашборд */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.dashboard-item {
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 16px;
+  background-color: rgba(217, 70, 239, 0.08);
+  text-align: center;
+}
+
+.dashboard-item h3 {
+  margin: 0 0 8px;
+  font-size: 1em;
+  color: var(--color-text);
+}
+
+.stat-value {
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--color-accent);
+  margin: 0;
 }
 
 /* форма: отступы через gap вместо <br><br> */
@@ -56,7 +154,8 @@ textarea {
 /* :focus — подсветка полей и кнопки при фокусе с клавиатуры/мыши */
 input:focus,
 textarea:focus,
-button:focus {
+button:focus,
+.nav-list a:focus {
   outline: none;
   border-color: var(--color-accent);
   box-shadow: 0 0 0 2px rgba(57, 255, 20, 0.4);
@@ -137,4 +236,39 @@ a:visited {
   font-weight: bold;
   padding: 2px 6px;
   border-radius: 4px;
+}
+
+/*  медиа-запросы планшет  */
+@media (max-width: 1024px) {
+  .genre-cards {
+    flex-wrap: wrap;
+  }
+
+  .genre-card {
+    flex: 1 1 45%;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/*  медиа-запросы: мобильные  */
+@media (max-width: 600px) {
+  main {
+    flex-direction: column;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .genre-card {
+    flex: 1 1 100%;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
 }
