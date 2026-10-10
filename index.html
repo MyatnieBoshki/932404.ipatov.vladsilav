@@ -2,17 +2,17 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>О себе</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<link rel="stylesheet" href="css/style.css">
 <style>
-  /* доработка textarea */
+  /* внутренний блок стилей: доработка textarea (padding задан только здесь) */
   textarea {
     padding: 12px;
     resize: vertical;
   }
-
 </style>
+</head>
 <body>
 
 <header>
@@ -21,55 +21,63 @@
 </header>
 
 <main>
-  <div>
-    <img src="avatar.jpg" alt="Портрет" width="368" height="543">
+  <img src="images/avatar.jpg" alt="Портрет Владислава Ипатова за компьютером" width="368" height="543">
 
-    <section>
-      <h2>Проекты</h2>
-<!-- список заменён на карточки -->
-      <div class="project-cards">
-        <div class="project-card">
-          <h3>Разработка модификаций к игре Terraria</h3>
-          <p>Кастомные предметы, боссы и механики для игрового движка Terraria.</p> <!-- NEW -->
-        </div>
-        <div class="project-card">
-          <h3>Roguelike-платформер</h3>
-          <p>Процедурная генерация уровней и система перманентной смерти.</p> <!-- NEW -->
-        </div>
-        <div class="project-card">
-          <h3>Многопользовательские RTS</h3>
-          <p>Сетевая синхронизация юнитов и стратегический ИИ противника.</p> <!-- NEW -->
-        </div>
+  <section>
+    <h2>Навыки</h2>
+    <ol>
+      <li>Алгоритмы и структуры данных</li>
+      <li>Работа с различными игровыми движками</li>
+      <li>Знание основ гейм-дизайна</li>
+      <li>Опыт работы с C#</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Проекты</h2>
+    <div class="project-cards">
+      <div class="project-card">
+        <span class="badge">NEW</span>
+        <h3>Разработка модификаций к игре Terraria</h3>
+        <p>Кастомные предметы, боссы и механики для игрового движка Terraria.</p>
       </div>
-    </section>
+      <div class="project-card">
+        <span class="badge">NEW</span>
+        <h3>Roguelike-платформер</h3>
+        <p>Процедурная генерация уровней и система перманентной смерти.</p>
+      </div>
+      <div class="project-card">
+        <span class="badge">NEW</span>
+        <h3>Многопользовательские RTS</h3>
+        <p>Сетевая синхронизация юнитов и стратегический ИИ противника.</p>
+      </div>
+    </div>
+  </section>
 
-    <section>
-      <h2>Навыки</h2>
-      <ol>
-        <li>Алгоритмы и структуры данных</li>
-        <li>Работа с различными игровыми движками</li>
-        <li>Знание основ гейм-дизайна</li>
-        <li>Опыт работы с C#</li>
-      </ol>
-    </section>
-
-    <section>
-      <h2>Обратная связь</h2>
-      <form action="#" method="post">
-        <input type="text" name="name" placeholder="Ваше имя"><br><br>
-        <input type="email" name="email" placeholder="Ваш email"><br><br>
-        <!-- добавлен inline стиль с text transform: uppercase -->
-        <textarea name="message" placeholder="Ваше сообщение" rows="4" cols="30"></textarea><br><br> 
-        <button type="submit">Отправить</button>
-      </form>
-    </section>
-
-  </div>
+  <section>
+    <h2>Обратная связь</h2>
+    <form action="#" method="post">
+      <div class="form-row">
+        <label for="name">Ваше имя</label>
+        <input type="text" id="name" name="name" placeholder="Ваше имя">
+      </div>
+      <div class="form-row">
+        <label for="email">Ваш email</label>
+        <input type="email" id="email" name="email" placeholder="Ваш email">
+      </div>
+      <div class="form-row">
+        <label for="message">Ваше сообщение</label>
+        <textarea id="message" name="message" placeholder="Ваше сообщение" rows="4" cols="30"></textarea>
+      </div>
+      <button type="submit" style="text-transform: uppercase;">Отправить</button>
+    </form>
+  </section>
 
   <aside>
     <h2>Обо мне</h2>
     <p>Любимая платформа: ПК</p>
     <p>Любимые технологии: Unity, C#</p>
+    <p>Профиль на <a href="https://github.com/MyatnieBoshki" target="_blank" rel="noopener">GitHub</a></p>
   </aside>
 
 </main>

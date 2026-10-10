@@ -1,0 +1,140 @@
+:root {
+  --color-primary: #2e1a47;
+  --color-accent: #39ff14;
+  --color-border: #d946ef;
+  --color-text: #e0d9f5;
+  --font-main: Arial, sans-serif;
+}
+
+/* position: static — поведение по умолчанию, задано явно для секций и aside */
+section, aside {
+  position: static;
+  border: 1px solid var(--color-border);
+  padding: 10px;
+  margin: 10px;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+body {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  font-family: var(--font-main);
+}
+
+h1, h2 {
+  color: var(--color-accent);
+}
+
+/* форма: отступы через gap вместо <br><br> */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+label {
+  font-size: 0.9em;
+}
+
+/* стили полей ввода */
+input[type="text"],
+input[type="email"],
+textarea {
+  background-color: #231235;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-family: var(--font-main);
+}
+
+/* :focus — подсветка полей и кнопки при фокусе с клавиатуры/мыши */
+input:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px rgba(57, 255, 20, 0.4);
+}
+
+/* кнопка отправки формы */
+button[type="submit"] {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-family: var(--font-main);
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button[type="submit"]:hover {
+  box-shadow: 0 4px 10px rgba(57, 255, 20, 0.35);
+}
+
+button[type="submit"]:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 3px rgba(57, 255, 20, 0.2);
+}
+
+/* ссылка: обычная и посещённая */
+a {
+  color: var(--color-accent);
+}
+
+a:visited {
+  color: #a0f0a0;
+}
+
+/* карточки проектов */
+.project-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* position: relative — нужна как точка отсчёта для абсолютно позиционированного бейджа */
+.project-card {
+  position: relative;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 12px;
+  background-color: rgba(217, 70, 239, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(57, 255, 20, 0.25);
+}
+
+.project-card:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(57, 255, 20, 0.15);
+}
+
+.project-card h3 {
+  color: var(--color-accent);
+  margin-top: 0;
+}
+
+/* position: absolute — бейдж "NEW" прижат к правому верхнему углу карточки */
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  font-size: 0.7em;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
