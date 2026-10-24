@@ -260,7 +260,7 @@ a:visited {
   }
 
   .nav-list {
-    flex-direction: column;
+    justify-content: center;
     gap: 8px;
   }
 
